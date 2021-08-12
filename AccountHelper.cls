@@ -4,4 +4,8 @@ public with sharing class AccountHelper {
         return [SELECT Id, Name, Type, Rating, Phone , Industry
         FROM Account];
     }
+    @AuraEnabled
+    Public static List<Contact> getContactList(){
+        return [select id, LastName,Firstname from Contact];
+    }
 }
