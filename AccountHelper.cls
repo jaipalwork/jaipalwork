@@ -1,15 +1,11 @@
-<<<<<<< Updated upstream
 public with sharing class AccountHelper {
     @AuraEnabled(cacheable=true)
     public static List<Account> getAccountList() {
-        return [SELECT Id, Name, Type, Rating, Phone FROM Account];
+        return [SELECT Id, Name, Type, Rating, Phone , Industry
+        FROM Account];
     }
-=======
-public with sharing class AccountHelper {
-    @AuraEnabled(cacheable=true)
-    public static List<Account> getAccountList() {
-        return [SELECT Id, Name, Type, Rating, Phone 
-            FROM Account];
+    @AuraEnabled
+    Public static List<Contact> getContactList(){
+        return [select id, LastName,Firstname from Contact];
     }
->>>>>>> Stashed changes
 }
